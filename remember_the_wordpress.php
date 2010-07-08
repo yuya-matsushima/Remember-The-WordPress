@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Remember The WordPress
-Plugin URI: http://blog.e2esound.com/
+Plugin URI: http://github.com/e2esoundcom/Remember-The-WordPress
 Description: If you forgot write a new post,this plugin send you E-mail.
 Version: 0.1
 Author: Yuya Terajima
@@ -33,7 +33,7 @@ function rtw_activate() {
     if(!get_option('rtw_message')) {
         update_option('rtw_message',$message);
     }
-    wp_schedule_event($time + 300, 'daily', 'rtw_cron');
+    wp_schedule_event($time + 86400, 'daily', 'rtw_cron');
 }
 register_activation_hook(__FILE__, 'rtw_activate');
 
@@ -141,7 +141,7 @@ function rtw_add_admin_page(){
                 </td>
 			</tr>
 			<tr valign="top">
-				<th scope="row"><label for="terms">メール・タイトル<label></th>
+				<th scope="row"><label for="terms">メールタイトル<label></th>
 				<td>
 					<input name="subject" type="text" id="subject" value="<?php echo htmlspecialchars(get_option('rtw_subject')); ?>" class="regular-text code" /><br />
                     送信メッセージの「タイトル」を入力してください。
