@@ -92,13 +92,20 @@ register_deactivation_hook(__FILE__, 'rtw_deactivate');
 /* Admin
 ==================================================================== */
 function rtw_add_admin_menu(){
-    add_options_page('Remember The WordPress','Remember The WP',8,__FILE__,'rtw_add_admin_page');
+    add_options_page('Remember The WordPress','Remember The WP','manage_options',__FILE__,'rtw_add_admin_page');
 }
 add_action('admin_menu','rtw_add_admin_menu');
 
 function rtw_add_admin_page(){    
+    
+    if(isset($_POST['posted']) === FALSE){
+        $posted = FALSE;
+    }elseif(isset($_POST['posted']) === TRUE){
+        $posted = TRUE;
+    }
+
     $unixtime_per_day = 86400;
-    if($_POST['posted'] === 'yes'){
+    if($posted) {
         //Validation
         if(preg_match('/[1-3][0-9]|[1-9]/',intval($_POST['terms']) AND intval($_POST['terms']) <= 30)){
             update_option('rtw_terms',intval($_POST['terms'] * $unixtime_per_day));
@@ -115,9 +122,9 @@ function rtw_add_admin_page(){
 <?php 
     //Admin Page Start
     //Updated Message
-    if($_POST['posted'] == 'yes'AND $rtw_error === FALSE) : ?>
+    if($posted === TRUE AND $rtw_error === FALSE) : ?>
 <div class="updated"><p><strong>設定を保存しました</strong></p></div>
-<?php elseif($_POST['posted'] == 'yes'AND $rtw_error === TRUE):?>
+<?php elseif($posted === TRUE AND $rtw_error === TRUE):?>
 <div class="error"><p><strong>アラート発生日数は1-30の間の値を入力して下さい。</strong></p></div>
 <?php endif; ?>
 
