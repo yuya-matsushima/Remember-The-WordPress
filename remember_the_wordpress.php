@@ -118,7 +118,7 @@ function rtw_add_admin_page(){
     if($_POST['posted'] == 'yes'AND $rtw_error === FALSE) : ?>
 <div class="updated"><p><strong>設定を保存しました</strong></p></div>
 <?php elseif($_POST['posted'] == 'yes'AND $rtw_error === TRUE):?>
-<div class="updated"><p><strong>アラート発生日数は1-30の間の値を入力して下さい。</strong></p></div>
+<div class="error"><p><strong>アラート発生日数は1-30の間の値を入力して下さい。</strong></p></div>
 <?php endif; ?>
 
 <div class="wrap">
