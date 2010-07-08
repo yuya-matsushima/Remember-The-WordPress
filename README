@@ -2,7 +2,7 @@ Remember The WordPress
 
 ○What's This?
 WordPress用のPlugin。
-設定した期間、WordPressを更新しないと1日1回アラートメールを飛ばします。
+設定した期間、WordPressを更新しないと1日1回アラートメール(テキスト)を飛ばします。
 参考：http://help-me-hackers.com/tasks/93
 
 
@@ -15,6 +15,8 @@ WordPress用のPlugin。
     b.送信先E-mailアドレス(default:設定画面の管理者)
     c.メールタイトル(default:Rmember the WordPress!!)
     d.メール本文(default:Blogの更新が滞っているようです。サイトの更新をお願いします。)
+
+・エンコードはUTF-8です。他の文字エンコードでWordPressを運用している場合には、Pluginファイルを同じ文字エンコードに変更してください。
 
 
 ○裏技
