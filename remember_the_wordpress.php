@@ -92,7 +92,7 @@ register_deactivation_hook(__FILE__, 'rtw_deactivate');
 /* Admin
 ==================================================================== */
 function rtw_add_admin_menu(){
-    add_options_page('Remember The WordPress','Remember The WP','manage_options',__FILE__,'rtw_add_admin_page');
+    add_options_page('Remember The WordPress','Remember The WP','administrator',__FILE__,'rtw_add_admin_page');
 }
 add_action('admin_menu','rtw_add_admin_menu');
 
