@@ -92,7 +92,7 @@ register_deactivation_hook(__FILE__, 'rtw_deactivate');
 /* Admin
 ==================================================================== */
 function rtw_add_admin_menu(){
-    add_options_page('Remember The WordPress','Remember the WP',8,__FILE__,'rtw_add_admin_page');
+    add_options_page('Remember The WordPress','Remember The WP',8,__FILE__,'rtw_add_admin_page');
 }
 add_action('admin_menu','rtw_add_admin_menu');
 
@@ -136,21 +136,21 @@ function rtw_add_admin_page(){
 			<tr valign="top">
 				<th scope="row"><label for="email">送信先E-mailアドレス<label></th>
 				<td>
-					<input name="email" type="text" id="email" value="<?php echo htmlspecialchars(get_option('rtw_email')); ?>" class="regular-text code" /><br />
+					<input name="email" type="text" id="email" value="<?php echo htmlspecialchars(get_option('rtw_email'),ENT_QUOTES); ?>" class="regular-text code" /><br />
                     アラートメールの送信先E-mailアドレスを入力してください。
                 </td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="terms">メールタイトル<label></th>
 				<td>
-					<input name="subject" type="text" id="subject" value="<?php echo htmlspecialchars(get_option('rtw_subject')); ?>" class="regular-text code" /><br />
+					<input name="subject" type="text" id="subject" value="<?php echo htmlspecialchars(get_option('rtw_subject'),ENT_QUOTES); ?>" class="regular-text code" /><br />
                     送信メッセージの「タイトル」を入力してください。
                 </td>
 			</tr>
 			<tr valign="top">
 				<th scope="row"><label for="terms">メール本文<label></th>
 				<td>
-                <textarea name='message' id='message' cols='50' rows='10'><?php echo htmlspecialchars(get_option('rtw_message')); ?></textarea>
+                <textarea name='message' id='message' cols='50' rows='10'><?php echo htmlspecialchars(get_option('rtw_message'),ENT_QUOTES); ?></textarea>
                     <br />
                     送信メッセージの「内容」を入力してください。
                 </td>
