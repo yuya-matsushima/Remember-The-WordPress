@@ -25,7 +25,7 @@ Pluginを停止すると、次回有効化した場合、全ての値を再度�
 もし、何度も停止→有効化を繰り返す場合には、Pluginの以下のコードを削除してくださ
 い。
 
-remember_the_wordpress.php 83-87行目
+remember_the_wordpress.php 78-83行目
 ===============================================================================
     delete_option('rtw_initialized');
     delete_option('rtw_terms');
@@ -38,5 +38,6 @@ remember_the_wordpress.php 83-87行目
 
 ○Author
 Yuya Terajima(e2esound.com)
+blog:http://www.e2esound.com/wp/2010/07/11/remember-the-wordpress/
 E-mail:terra@e2esound.com
 Twitter:http://twitter.com/terakuma
