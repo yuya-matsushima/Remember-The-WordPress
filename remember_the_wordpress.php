@@ -43,7 +43,7 @@ register_activation_hook(__FILE__, 'rtw_activate');
 function get_latest_post_time() {
     global $wpdb;
     $query = "SELECT post_date FROM ".$wpdb->posts."
-            WHERE post_status = 'publish'
+            WHERE post_status = 'publish' AND post_type = 'post'
             ORDER BY `".$wpdb->posts."`.`post_date` DESC LIMIT 0,1";
     $query = $wpdb->prepare($query);
     return strtotime($wpdb->get_var($query));
