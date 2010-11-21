@@ -3,7 +3,7 @@
 Plugin Name: Remember The WordPress
 Plugin URI: http://github.com/e2esoundcom/Remember-The-WordPress
 Description: If you forgot write a new post,this plugin send you E-mail.
-Version: 0.21
+Version: 0.2.1
 Author: Yuya Terajima
 Author URI: http://www.e2esound.com/
 */
