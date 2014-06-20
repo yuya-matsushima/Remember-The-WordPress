@@ -69,12 +69,12 @@ function rtw_compare_time(){
     $latest = get_latest_post_time();
     $terms = intval(get_option('rtw_terms')) + intval($latest);
 
-    if(intval($terms) < intval(time())) {
+    if (intval($terms) < intval(time())) {
         $subject  = get_option('rtw_subject');
         $mailbody = get_option('rtw_message');
         $to_email = get_option('rtw_email');
 
-        mb_send_mail($to_email,$subject,$mailbody);
+        wp_mail($to_email, $subject, $mailbody);
     }
 }
 add_action('rtw_cron', 'rtw_compare_time');
