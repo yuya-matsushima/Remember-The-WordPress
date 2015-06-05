@@ -6,6 +6,10 @@ function rtw_add_admin_page() {
     $posted = (isset($_POST['posted'])) ? TRUE : FALSE;
 
     if($posted) {
+        if (isset($_POST['debug'])) {
+            rtw_compare_time();
+            return;
+        }
         //Validation
         if(preg_match('/[1-3][0-9]|[1-9]/',intval($_POST['terms']) AND intval($_POST['terms']) <= 30)){
             update_option('rtw_terms',intval($_POST['terms'] * RTW_UNIXTIME_PER_DAY));
@@ -85,6 +89,9 @@ if($posted === TRUE AND $rtw_error === FALSE):?>
 
             <p class="submit">
                 <input type="submit" name="Submit" class="button-primary" value="変更を保存" />
+            </p>
+            <p class="submit">
+                <input type="submit" name="debug" class="button-primary" value="強制実行(デバッグ用)" />
             </p>
     </form>
 </div>
