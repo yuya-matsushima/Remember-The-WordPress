@@ -71,7 +71,6 @@ function get_latest_post_time() {
 
 function rtw_compare_time(){
     $latest = get_latest_post_time();
-    var_dump($latest);
     $terms = intval(get_option('rtw_terms')) + intval($latest);
 
     if (intval($terms) < intval(time())) {
